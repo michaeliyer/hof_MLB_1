@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   padding: 2rem;
-  background-color: #2b62e5;
+  background-color: #b5bed4;
 }
 
 #search {
@@ -40,8 +40,8 @@ body {
 }
 
 .result {
-  background: rgb(6, 44, 116);
-  color: white;
+  background: rgb(0, 0, 0);
+  color: rgb(9, 9, 9);
   padding: 1rem;
   margin-bottom: 0.5rem;
   border-radius: 6px;
