@@ -167,7 +167,7 @@ export const theNames = [
     birthMonth: "July",
     birthDay: 28,
     birthYear: null,
-    passedAway: null,
+    passedAway: "September 5, 2012",
     comment: null,
   },
   {
@@ -224,6 +224,16 @@ export const theNames = [
     passedAway: "8/9/69",
     comment: null,
   },
+  {
+    firstName: "Rose",
+    lastName: "Hen",
+    birthMonth: null,
+    birthDay: null,
+    birthYear: null,
+    passedAway: null,
+    comment: null,
+  },
+
   {
     firstName: "Katherine",
     lastName: "How",
