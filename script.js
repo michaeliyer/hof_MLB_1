@@ -44,14 +44,36 @@ function filterNames() {
     );
   });
 
-  displayResults(getSortedNames(results));
+  let heading = "Filtered Birthdays";
+  if (
+    query.birthMonth &&
+    !query.firstName &&
+    !query.lastName &&
+    !query.birthDay &&
+    !query.birthYear
+  ) {
+    // Capitalize month
+    heading =
+      query.birthMonth.charAt(0).toUpperCase() +
+      query.birthMonth.slice(1) +
+      " Birthdays";
+  }
+  displayResults(getSortedNames(results), heading);
   allNamesVisible = false;
 }
 
-function displayResults(results) {
+function displayResults(results, heading = "") {
   resultsDiv.innerHTML = "";
+  if (heading) {
+    const headingDiv = document.createElement("div");
+    headingDiv.className = "results-heading";
+    headingDiv.style.fontWeight = "bold";
+    headingDiv.style.marginBottom = "0.5em";
+    headingDiv.textContent = heading;
+    resultsDiv.appendChild(headingDiv);
+  }
   if (results.length === 0) {
-    resultsDiv.innerHTML = "<p>No matches found.</p>";
+    resultsDiv.innerHTML += "<p>No matches found.</p>";
     return;
   }
 
@@ -87,6 +109,9 @@ function displayResults(results) {
     } else if (birthday) {
       line += `: ${birthday}`;
     }
+    if (aHuman.comment) {
+      line += ` --- '${aHuman.comment}'`;
+    }
     div.innerHTML = line;
     resultsDiv.appendChild(div);
   });
@@ -106,7 +131,7 @@ clearBtn.addEventListener("click", () => {
 });
 
 showAllBtn.addEventListener("click", () => {
-  displayResults(getSortedNames(theNames));
+  displayResults(getSortedNames(theNames), "All Birthdays");
   allNamesVisible = true;
 });
 
