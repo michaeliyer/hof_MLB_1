@@ -24,7 +24,7 @@ export const theNames = [
     birthDay: 28,
     birthYear: null,
     passedAway: "3/10/23",
-    comment: null,
+    comment: "❤️",
   },
   {
     firstName: "James",
@@ -33,7 +33,7 @@ export const theNames = [
     birthDay: 13,
     birthYear: null,
     passedAway: "6/13/11",
-    comment: null,
+    comment: "A great guy",
   },
   {
     firstName: "Sue",
@@ -218,11 +218,11 @@ export const theNames = [
   {
     firstName: "John",
     lastName: "Hen",
-    birthMonth: null,
-    birthDay: null,
-    birthYear: null,
-    passedAway: "8/9/69",
-    comment: null,
+    birthMonth: "November",
+    birthDay: 6,
+    birthYear: 1916,
+    passedAway: "11/9/69",
+    comment: "Grandfather",
   },
   {
     firstName: "Rose",
@@ -233,7 +233,6 @@ export const theNames = [
     passedAway: null,
     comment: null,
   },
-
   {
     firstName: "Katherine",
     lastName: "How",
@@ -636,6 +635,7 @@ export const theNames = [
     birthMonth: "August",
     birthDay: 17,
     birthYear: null,
+    passedAway: null,
     comment: null,
   },
   {
@@ -919,12 +919,13 @@ export const theNames = [
 
   {
     firstName: "John",
-    lastName: "S",
+    lastName: "Stewart",
     birthMonth: "July",
     birthDay: 31,
-    birthYear: null,
-    passedAway: null,
-    comment: null,
+    birthYear: 1969,
+    passedAway: "Ok, he's alive but dead in terms of brain power",
+    comment:
+      "A nice guy but not particularly bright - Worried too much about trans stuff and in love with Trump - gross!",
   },
   {
     firstName: "Omer",
@@ -960,7 +961,8 @@ export const theNames = [
     birthDay: 1,
     birthYear: null,
     passedAway: "July 11, 2003",
-    comment: null,
+    comment:
+      "You and that asshole Bob Harvey shouldn't have ganged up on me. That was low rent man.",
   },
   {
     firstName: "Peggy",
@@ -968,6 +970,7 @@ export const theNames = [
     birthMonth: "April",
     birthDay: 7,
     birthYear: null,
+    passedAway: null,
     comment: null,
   },
   {
@@ -976,6 +979,7 @@ export const theNames = [
     birthMonth: null,
     birthDay: null,
     birthYear: null,
+    passedAway: null,
     comment: null,
   },
   {
@@ -1064,7 +1068,7 @@ export const theNames = [
     lastName: "Cy",
     birthMonth: "April",
     birthDay: 24,
-    birthYear: 1976,
+    birthYear: 1966,
     passedAway: null,
     comment: null,
   },
@@ -1085,5 +1089,14 @@ export const theNames = [
     birthYear: null,
     passedAway: null,
     comment: null,
+  },
+  {
+    firstName: "Jesus H.",
+    lastName: "Christ",
+    birthMonth: "December",
+    birthDay: 25,
+    birthYear: "BC 0005",
+    passedAway: "AD 0033",
+    comment: "Who really knows dates when it comes to this mysterious dude?",
   },
 ];

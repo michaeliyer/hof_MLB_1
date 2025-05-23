@@ -1,4 +1,4 @@
-import { theNames } from "./allNames.js";
+import { theNames } from "./theNames.js";
 const inputs = {
   firstName: document.getElementById("firstName"),
   lastName: document.getElementById("lastName"),
@@ -103,11 +103,11 @@ function displayResults(results, heading = "") {
     if (aHuman.passedAway) {
       line += " ---";
       if (birthday) {
-        line += ` Born: ${birthday} -`;
+        line += ` Born: <span class='date-info'>${birthday}</span> -`;
       }
-      line += ` Passed Away: ${aHuman.passedAway}, RIP ${aHuman.firstName} ${aHuman.lastName}`;
+      line += ` Passed Away: <span class='date-info'>${aHuman.passedAway}</span>, RIP ${aHuman.firstName} ${aHuman.lastName}`;
     } else if (birthday) {
-      line += `: ${birthday}`;
+      line += `: <span class='date-info'>${birthday}</span>`;
     }
     if (aHuman.comment) {
       line += ` --- '${aHuman.comment}'`;
