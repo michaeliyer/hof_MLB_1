@@ -29,6 +29,7 @@ class HofSearch extends LitElement {
     positionTerm: { type: String },
     nationalityTerm: { type: String },
     awardTerm: { type: String },
+    suffixTerm: { type: String },
     showAll: { type: Boolean },
   };
 
@@ -40,6 +41,7 @@ class HofSearch extends LitElement {
     this.positionTerm = "All Positions";
     this.nationalityTerm = "";
     this.awardTerm = "";
+    this.suffixTerm = "";
     this.showAll = false;
   }
 
@@ -78,6 +80,7 @@ class HofSearch extends LitElement {
     this.positionTerm = "All Positions";
     this.nationalityTerm = "";
     this.awardTerm = "";
+    this.suffixTerm = "";
     this.showAll = false;
   }
 
@@ -92,7 +95,8 @@ class HofSearch extends LitElement {
       (this.teamTerm && this.teamTerm !== "All Teams") ||
       (this.positionTerm && this.positionTerm !== "All Positions") ||
       this.nationalityTerm ||
-      this.awardTerm;
+      this.awardTerm ||
+      this.suffixTerm;
     if (!hasSearch && !this.showAll) return [];
 
     return hofMember.filter(
@@ -101,12 +105,12 @@ class HofSearch extends LitElement {
           (player.firstName &&
             player.firstName
               .toLowerCase()
-              .includes(this.firstNameTerm.toLowerCase()))) &&
+              .startsWith(this.firstNameTerm.toLowerCase()))) &&
         (!this.lastNameTerm ||
           (player.lastName &&
             player.lastName
               .toLowerCase()
-              .includes(this.lastNameTerm.toLowerCase()))) &&
+              .startsWith(this.lastNameTerm.toLowerCase()))) &&
         (this.teamTerm === "All Teams" ||
           (player.teams && player.teams.includes(this.teamTerm)) ||
           (player.primaryTeam && player.primaryTeam.includes(this.teamTerm))) &&
@@ -125,7 +129,16 @@ class HofSearch extends LitElement {
           (player.awards &&
             player.awards.some((award) =>
               award.toLowerCase().includes(this.awardTerm.toLowerCase())
-            )))
+            ))) &&
+        (!this.suffixTerm ||
+          (player.lastName &&
+            player.lastName
+              .toLowerCase()
+              .endsWith(this.suffixTerm.toLowerCase())) ||
+          (player.realName &&
+            player.realName
+              .toLowerCase()
+              .endsWith(this.suffixTerm.toLowerCase())))
     );
   }
 
@@ -146,6 +159,12 @@ class HofSearch extends LitElement {
           placeholder="Last Name"
           @input=${(e) => this.updateField(e, "lastNameTerm")}
           .value=${this.lastNameTerm}
+        />
+        <input
+          type="text"
+          placeholder="Suffix (Jr, Sr, III, etc)"
+          @input=${(e) => this.updateField(e, "suffixTerm")}
+          .value=${this.suffixTerm}
         />
         <select
           @change=${(e) => this.updateField(e, "teamTerm")}
@@ -181,6 +200,7 @@ class HofSearch extends LitElement {
         ${sortedPlayers.length === 0 &&
         (this.firstNameTerm ||
           this.lastNameTerm ||
+          this.suffixTerm ||
           (this.teamTerm && this.teamTerm !== "All Teams") ||
           (this.positionTerm && this.positionTerm !== "All Positions") ||
           this.nationalityTerm ||
