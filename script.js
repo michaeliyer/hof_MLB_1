@@ -32,6 +32,7 @@ class HofSearch extends LitElement {
     awardTerm: { type: String },
     suffixTerm: { type: String },
     showAll: { type: Boolean },
+    openPlayers: { type: Array },
   };
 
   constructor() {
@@ -45,6 +46,7 @@ class HofSearch extends LitElement {
     this.awardTerm = "";
     this.suffixTerm = "";
     this.showAll = false;
+    this.openPlayers = [];
   }
 
   get allTeams() {
@@ -92,6 +94,30 @@ class HofSearch extends LitElement {
     this.showAll = false;
   }
 
+  openPlayer(player) {
+    if (
+      !this.openPlayers.some(
+        (p) =>
+          p.firstName === player.firstName &&
+          p.lastName === player.lastName &&
+          p.birthDay === player.birthDay
+      )
+    ) {
+      this.openPlayers = [...this.openPlayers, player];
+    }
+  }
+
+  closePlayer(player) {
+    this.openPlayers = this.openPlayers.filter(
+      (p) =>
+        !(
+          p.firstName === player.firstName &&
+          p.lastName === player.lastName &&
+          p.birthDay === player.birthDay
+        )
+    );
+  }
+
   clearSearch() {
     this.firstNameTerm = "";
     this.lastNameTerm = "";
@@ -102,6 +128,7 @@ class HofSearch extends LitElement {
     this.awardTerm = "";
     this.suffixTerm = "";
     this.showAll = false;
+    this.openPlayers = [];
   }
 
   showAllPlayers() {
@@ -442,44 +469,76 @@ class HofSearch extends LitElement {
         ${leadIn
           ? html`<p style="font-weight:bold; margin-top:1em;">${leadIn}</p>`
           : ""}
-        ${sortedPlayers.length === 0 &&
-        (this.firstNameTerm ||
-          this.lastNameTerm ||
-          this.suffixTerm ||
-          (this.teamTerm && this.teamTerm !== "Select Team") ||
-          (this.positionTerm && this.positionTerm !== "Select Position") ||
-          (this.nationalityTerm &&
-            this.nationalityTerm !== "Select Nationality") ||
-          (this.raceTerm && this.raceTerm !== "Select Race") ||
-          this.awardTerm)
-          ? html`<p><em>No players found. Try adjusting your search.</em></p>`
-          : sortedPlayers.map(
-              (player) => html`
-                <div class="player-card">
-                  <h3>${player.firstName} ${player.lastName}</h3>
-                  <p>
-                    <strong>Primary Team:</strong> ${player.primaryTeam.join(
-                      ", "
-                    )}
-                  </p>
-                  <p><strong>Teams:</strong> ${player.teams.join(", ")}</p>
-                  <p><strong>Position:</strong> ${player.position}</p>
-                  <p><strong>Nationality:</strong> ${player.nationality}</p>
-                  <p><strong>Race:</strong> ${player.race}</p>
-                  <p><strong>Years Active:</strong> ${player.yearsActive}</p>
-                  <p><strong>Bats:</strong> ${player.batHand.join(", ")}</p>
-                  <p><strong>Throws:</strong> ${player.throwHand.join(", ")}</p>
-                  <p><strong>Awards:</strong> ${player.awards.join("; ")}</p>
-                  <p><strong>Nicknames:</strong> ${player.nickNames}</p>
-                  <p><strong>Real Name:</strong> ${player.realName}</p>
-                  <p><strong>DOB:</strong> ${player.birthDay}</p>
-                  <p><strong>Passed Away:</strong> ${player.deathDay}</p>
-                  <p><strong>Inducted:</strong> ${player.yearInducted}</p>
-                  <p><strong>Player Notes:</strong> ${player.commentOne}</p>
-                  <p><strong>More Notes:</strong> ${player.commentTwo}</p>
-                </div>
-              `
-            )}
+
+        <div>
+          ${sortedPlayers.length === 0 &&
+          (this.firstNameTerm ||
+            this.lastNameTerm ||
+            this.suffixTerm ||
+            (this.teamTerm && this.teamTerm !== "Select Team") ||
+            (this.positionTerm && this.positionTerm !== "Select Position") ||
+            (this.nationalityTerm &&
+              this.nationalityTerm !== "Select Nationality") ||
+            (this.raceTerm && this.raceTerm !== "Select Race") ||
+            this.awardTerm)
+            ? html`<p><em>No players found. Try adjusting your search.</em></p>`
+            : html`
+                <ul style="list-style:none; padding:0;">
+                  ${sortedPlayers.map(
+                    (player) => html`
+                      <li style="margin-bottom:0.5em;">
+                        <a
+                          href="#"
+                          @click=${(e) => {
+                            e.preventDefault();
+                            this.openPlayer(player);
+                          }}
+                          style="cursor:pointer; color:navy; text-decoration:underline; font-weight:bold;"
+                        >
+                          ${player.firstName} ${player.lastName}
+                        </a>
+                      </li>
+                    `
+                  )}
+                </ul>
+              `}
+        </div>
+
+        <div>
+          ${this.openPlayers.map(
+            (player) => html`
+              <div class="player-card">
+                <button
+                  style="float:right; font-size:1.2em; background:none; border:none; cursor:pointer; color:#fff; font-weight:bold;"
+                  @click=${() => this.closePlayer(player)}
+                >
+                  ×
+                </button>
+                <h3>${player.firstName} ${player.lastName}</h3>
+                <p>
+                  <strong>Primary Team:</strong> ${player.primaryTeam.join(
+                    ", "
+                  )}
+                </p>
+                <p><strong>Teams:</strong> ${player.teams.join(", ")}</p>
+                <p><strong>Position:</strong> ${player.position}</p>
+                <p><strong>Nationality:</strong> ${player.nationality}</p>
+                <p><strong>Race:</strong> ${player.race}</p>
+                <p><strong>Years Active:</strong> ${player.yearsActive}</p>
+                <p><strong>Bats:</strong> ${player.batHand.join(", ")}</p>
+                <p><strong>Throws:</strong> ${player.throwHand.join(", ")}</p>
+                <p><strong>Awards:</strong> ${player.awards.join("; ")}</p>
+                <p><strong>Nicknames:</strong> ${player.nickNames}</p>
+                <p><strong>Real Name:</strong> ${player.realName}</p>
+                <p><strong>DOB:</strong> ${player.birthDay}</p>
+                <p><strong>Passed Away:</strong> ${player.deathDay}</p>
+                <p><strong>Inducted:</strong> ${player.yearInducted}</p>
+                <p><strong>Player Notes:</strong> ${player.commentOne}</p>
+                <p><strong>More Notes:</strong> ${player.commentTwo}</p>
+              </div>
+            `
+          )}
+        </div>
       </div>
     `;
   }
