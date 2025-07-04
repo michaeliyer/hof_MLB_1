@@ -28,6 +28,7 @@ class HofSearch extends LitElement {
     positionTerm: { type: String },
     nationalityTerm: { type: String },
     awardTerm: { type: String },
+    showAll: { type: Boolean },
   };
 
   constructor() {
@@ -37,10 +38,12 @@ class HofSearch extends LitElement {
     this.positionTerm = '';
     this.nationalityTerm = '';
     this.awardTerm = '';
+    this.showAll = false;
   }
 
   updateField(e, field) {
     this[field] = e.target.value.toLowerCase();
+    this.showAll = false;
   }
 
   clearSearch() {
@@ -49,11 +52,16 @@ class HofSearch extends LitElement {
     this.positionTerm = '';
     this.nationalityTerm = '';
     this.awardTerm = '';
+    this.showAll = false;
+  }
+
+  showAllPlayers() {
+    this.showAll = true;
   }
 
   get filteredPlayers() {
     const hasSearch = this.nameTerm || this.teamTerm || this.positionTerm || this.nationalityTerm || this.awardTerm;
-    if (!hasSearch) return [];
+    if (!hasSearch && !this.showAll) return [];
 
     return hofMember.filter(player =>
       (!this.nameTerm ||
@@ -83,6 +91,7 @@ class HofSearch extends LitElement {
         <input type="text" placeholder="Search by nationality..." @input=${e => this.updateField(e, 'nationalityTerm')} .value=${this.nationalityTerm}>
         <input type="text" placeholder="Search by award..." @input=${e => this.updateField(e, 'awardTerm')} .value=${this.awardTerm}>
         <button @click=${this.clearSearch}>Clear</button>
+        <button @click=${this.showAllPlayers}>Show All</button>
 
         ${sortedPlayers.length === 0 && (this.nameTerm || this.teamTerm || this.positionTerm || this.nationalityTerm || this.awardTerm) ? html`<p><em>No players found. Try adjusting your search.</em></p>` :
           sortedPlayers.map(player => html`
