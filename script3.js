@@ -1,3 +1,6 @@
+
+
+// script.js
 import { html, css, LitElement } from 'https://unpkg.com/lit@2/index.js?module';
 import { hofMember } from './hofPlayers.js';
 
@@ -52,9 +55,6 @@ class HofSearch extends LitElement {
   }
 
   get filteredPlayers() {
-    const hasSearch = this.nameTerm || this.teamTerm || this.positionTerm || this.nationalityTerm || this.awardTerm;
-    if (!hasSearch) return [];
-
     return hofMember.filter(player =>
       (!this.nameTerm ||
         player.firstName.toLowerCase().includes(this.nameTerm) ||
@@ -84,7 +84,7 @@ class HofSearch extends LitElement {
         <input type="text" placeholder="Search by award..." @input=${e => this.updateField(e, 'awardTerm')} .value=${this.awardTerm}>
         <button @click=${this.clearSearch}>Clear</button>
 
-        ${sortedPlayers.length === 0 && (this.nameTerm || this.teamTerm || this.positionTerm || this.nationalityTerm || this.awardTerm) ? html`<p><em>No players found. Try adjusting your search.</em></p>` :
+        ${sortedPlayers.length === 0 ? html`<p><em>No players found. Try adjusting your search.</em></p>` :
           sortedPlayers.map(player => html`
             <div class="player-card">
               <h3>${player.firstName} ${player.lastName}</h3>

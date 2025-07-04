@@ -61,3 +61,10 @@ body {
 .date-info {
   font-weight: bold;
 }
+
+.groups-info {
+  font-size: 0.9em;
+  color: #666;
+  font-style: italic;
+  margin-left: 0.5em;
+}
