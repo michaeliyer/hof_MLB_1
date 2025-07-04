@@ -163,10 +163,201 @@ class HofSearch extends LitElement {
     );
   }
 
+  getFilteredCountMap(field, options) {
+    // For each option, count players matching all filters except the one for this field
+    const counts = {};
+    options.forEach((option) => {
+      if (option.startsWith("Select")) {
+        counts[option] = null;
+        return;
+      }
+      counts[option] = hofMember.filter((player) => {
+        // Apply all filters except the one for this field
+        if (
+          field !== "teamTerm" &&
+          this.teamTerm !== "Select Team" &&
+          !(player.teams && player.teams.includes(this.teamTerm)) &&
+          !(player.primaryTeam && player.primaryTeam.includes(this.teamTerm))
+        ) {
+          return false;
+        }
+        if (
+          field !== "positionTerm" &&
+          this.positionTerm !== "Select Position" &&
+          !(
+            player.position &&
+            player.position
+              .split("/")
+              .map((p) => p.trim())
+              .includes(this.positionTerm)
+          )
+        ) {
+          return false;
+        }
+        if (
+          field !== "nationalityTerm" &&
+          this.nationalityTerm !== "Select Nationality" &&
+          (!player.nationality || player.nationality !== this.nationalityTerm)
+        ) {
+          return false;
+        }
+        if (
+          field !== "raceTerm" &&
+          this.raceTerm !== "Select Race" &&
+          (!player.race || player.race !== this.raceTerm)
+        ) {
+          return false;
+        }
+        if (
+          this.firstNameTerm &&
+          (!player.firstName ||
+            !player.firstName
+              .toLowerCase()
+              .startsWith(this.firstNameTerm.toLowerCase()))
+        ) {
+          return false;
+        }
+        if (
+          this.lastNameTerm &&
+          (!player.lastName ||
+            !player.lastName
+              .toLowerCase()
+              .startsWith(this.lastNameTerm.toLowerCase()))
+        ) {
+          return false;
+        }
+        if (
+          this.suffixTerm &&
+          !(
+            player.lastName &&
+            player.lastName
+              .toLowerCase()
+              .endsWith(this.suffixTerm.toLowerCase())
+          ) &&
+          !(
+            player.realName &&
+            player.realName
+              .toLowerCase()
+              .endsWith(this.suffixTerm.toLowerCase())
+          )
+        ) {
+          return false;
+        }
+        if (
+          this.awardTerm &&
+          (!player.awards ||
+            !player.awards.some((award) =>
+              award.toLowerCase().includes(this.awardTerm.toLowerCase())
+            ))
+        ) {
+          return false;
+        }
+        // For team, skip null/empty
+        if (field === "teamTerm" && option && option !== "Select Team") {
+          if (
+            !(player.teams && player.teams.includes(option)) &&
+            !(player.primaryTeam && player.primaryTeam.includes(option))
+          ) {
+            return false;
+          }
+        }
+        // For position, skip null/empty
+        if (
+          field === "positionTerm" &&
+          option &&
+          option !== "Select Position"
+        ) {
+          if (
+            !(
+              player.position &&
+              player.position
+                .split("/")
+                .map((p) => p.trim())
+                .includes(option)
+            )
+          ) {
+            return false;
+          }
+        }
+        // For nationality, skip null/empty
+        if (
+          field === "nationalityTerm" &&
+          option &&
+          option !== "Select Nationality"
+        ) {
+          if (!player.nationality || player.nationality !== option) {
+            return false;
+          }
+        }
+        // For race, skip null/empty
+        if (field === "raceTerm" && option && option !== "Select Race") {
+          if (!player.race || player.race !== option) {
+            return false;
+          }
+        }
+        return true;
+      }).length;
+    });
+    return counts;
+  }
+
   render() {
     const sortedPlayers = this.filteredPlayers.sort((a, b) =>
       a.lastName.localeCompare(b.lastName)
     );
+    const teamCounts = this.getFilteredCountMap("teamTerm", this.allTeams);
+    const positionCounts = this.getFilteredCountMap(
+      "positionTerm",
+      this.allPositions
+    );
+    const nationalityCounts = this.getFilteredCountMap(
+      "nationalityTerm",
+      this.allNationalities
+    );
+    const raceCounts = this.getFilteredCountMap("raceTerm", this.allRaces);
+
+    // Lead-in summaries
+    let leadIn = "";
+    if (
+      this.showAll &&
+      !this.firstNameTerm &&
+      !this.lastNameTerm &&
+      !this.suffixTerm &&
+      this.teamTerm === "Select Team" &&
+      this.positionTerm === "Select Position" &&
+      this.nationalityTerm === "Select Nationality" &&
+      this.raceTerm === "Select Race" &&
+      !this.awardTerm
+    ) {
+      const count = this.filteredPlayers.length;
+      leadIn = `There ${count === 1 ? "is" : "are"} ${count} Hall of Famer${
+        count === 1 ? "" : "s"
+      } in the database.`;
+    } else if (this.raceTerm && this.raceTerm !== "Select Race") {
+      const count = this.filteredPlayers.length;
+      leadIn = `There ${count === 1 ? "is" : "are"} ${count} ${
+        this.raceTerm
+      } player${count === 1 ? "" : "s"} in the Hall of Fame.`;
+    } else if (
+      this.nationalityTerm &&
+      this.nationalityTerm !== "Select Nationality"
+    ) {
+      const count = this.filteredPlayers.length;
+      leadIn = `There ${count === 1 ? "is" : "are"} ${count} ${
+        this.nationalityTerm
+      } Hall of Famer${count === 1 ? "" : "s"}.`;
+    } else if (this.teamTerm && this.teamTerm !== "Select Team") {
+      const count = this.filteredPlayers.length;
+      leadIn = `There ${count === 1 ? "is" : "are"} ${count} player${
+        count === 1 ? "" : "s"
+      } who played for the ${this.teamTerm}.`;
+    } else if (this.positionTerm && this.positionTerm !== "Select Position") {
+      const count = this.filteredPlayers.length;
+      leadIn = `There ${count === 1 ? "is" : "are"} ${count} Hall of Famer${
+        count === 1 ? "" : "s"
+      } who played ${this.positionTerm}.`;
+    }
+
     return html`
       <div>
         <input
@@ -192,7 +383,12 @@ class HofSearch extends LitElement {
           .value=${this.teamTerm}
         >
           ${this.allTeams.map(
-            (team) => html`<option value="${team}">${team}</option>`
+            (team) =>
+              html`<option value="${team}">
+                ${team}${teamCounts[team] !== null
+                  ? ` (${teamCounts[team]})`
+                  : ""}
+              </option>`
           )}
         </select>
         <select
@@ -200,7 +396,12 @@ class HofSearch extends LitElement {
           .value=${this.positionTerm}
         >
           ${this.allPositions.map(
-            (pos) => html`<option value="${pos}">${pos}</option>`
+            (pos) =>
+              html`<option value="${pos}">
+                ${pos}${positionCounts[pos] !== null
+                  ? ` (${positionCounts[pos]})`
+                  : ""}
+              </option>`
           )}
         </select>
         <select
@@ -208,7 +409,12 @@ class HofSearch extends LitElement {
           .value=${this.nationalityTerm}
         >
           ${this.allNationalities.map(
-            (nat) => html`<option value="${nat}">${nat}</option>`
+            (nat) =>
+              html`<option value="${nat}">
+                ${nat}${nationalityCounts[nat] !== null
+                  ? ` (${nationalityCounts[nat]})`
+                  : ""}
+              </option>`
           )}
         </select>
         <select
@@ -216,7 +422,12 @@ class HofSearch extends LitElement {
           .value=${this.raceTerm}
         >
           ${this.allRaces.map(
-            (race) => html`<option value="${race}">${race}</option>`
+            (race) =>
+              html`<option value="${race}">
+                ${race}${raceCounts[race] !== null
+                  ? ` (${raceCounts[race]})`
+                  : ""}
+              </option>`
           )}
         </select>
         <input
@@ -228,6 +439,9 @@ class HofSearch extends LitElement {
         <button @click=${this.clearSearch}>Clear</button>
         <button @click=${this.showAllPlayers}>Show All</button>
 
+        ${leadIn
+          ? html`<p style="font-weight:bold; margin-top:1em;">${leadIn}</p>`
+          : ""}
         ${sortedPlayers.length === 0 &&
         (this.firstNameTerm ||
           this.lastNameTerm ||
