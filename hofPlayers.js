@@ -700,7 +700,7 @@ export const hofMember = [
     birthDay: "6/15/1958",
     deathDay: null,
     realName: "Wade Anthony Boggs",
-    nickNames: null,
+    nickNames: "Mr. Wade Boggs!!!",
     yearInducted: 2005,
     commentOne:
       "One of baseball's greatest contact hitters with 3,010 career hits.",
@@ -2269,8 +2269,6 @@ export const hofMember = [
     commentTwo: "Praised for athleticism, leadership, and two-way excellence.",
   },
 
-
-
   {
     firstName: "Red",
     lastName: "Faber",
@@ -2289,7 +2287,8 @@ export const hofMember = [
     nickNames: "Red",
     yearInducted: 1964,
     commentOne: "Key contributor to the White Sox 1917 World Series win.",
-    commentTwo: "Known for his mastery of the spitball, which he legally continued after it was banned.",
+    commentTwo:
+      "Known for his mastery of the spitball, which he legally continued after it was banned.",
   },
 
   {
@@ -2303,10 +2302,7 @@ export const hofMember = [
     yearsActive: "1936–1956",
     batHand: ["Right"],
     throwHand: ["Right"],
-    awards: [
-      "8× All-Star",
-      "World Series Champion (1948)"
-    ],
+    awards: ["8× All-Star", "World Series Champion (1948)"],
     birthDay: "11/3/1918",
     deathDay: "12/15/2010",
     realName: "Robert William Andrew Feller",
@@ -2327,16 +2323,15 @@ export const hofMember = [
     yearsActive: "1929–1947",
     batHand: ["Right"],
     throwHand: ["Right"],
-    awards: [
-      "8× All-Star"
-    ],
+    awards: ["8× All-Star"],
     birthDay: "10/12/1905",
     deathDay: "7/27/1995",
     realName: "Richard Benjamin Ferrell",
     nickNames: null,
     yearInducted: 1984,
     commentOne: "One of the finest defensive catchers of his era.",
-    commentTwo: "Longevity and consistency defined his career behind the plate.",
+    commentTwo:
+      "Longevity and consistency defined his career behind the plate.",
   },
 
   {
@@ -2354,7 +2349,7 @@ export const hofMember = [
       "7× All-Star",
       "3× World Series Champion",
       "1981 AL MVP",
-      "1981 AL Cy Young Award"
+      "1981 AL Cy Young Award",
     ],
     birthDay: "8/25/1946",
     deathDay: null,
@@ -2376,17 +2371,16 @@ export const hofMember = [
     yearsActive: "1969–1993",
     batHand: ["Right"],
     throwHand: ["Right"],
-    awards: [
-      "11× All-Star",
-      "1972 AL Rookie of the Year"
-    ],
+    awards: ["11× All-Star", "1972 AL Rookie of the Year"],
     birthDay: "12/26/1947",
     deathDay: null,
     realName: "Carlton Ernest Fisk",
     nickNames: "Pudge",
     yearInducted: 2000,
-    commentOne: "Famous for his dramatic walk-off home run in the 1975 World Series.",
-    commentTwo: "Holds longevity records for catchers including home runs and games caught.",
+    commentOne:
+      "Famous for his dramatic walk-off home run in the 1975 World Series.",
+    commentTwo:
+      "Holds longevity records for catchers including home runs and games caught.",
   },
 
   {
@@ -2406,8 +2400,10 @@ export const hofMember = [
     realName: "Elmer Harrison Flick",
     nickNames: null,
     yearInducted: 1963,
-    commentOne: "Known for his speed and batting skill during the dead-ball era.",
-    commentTwo: "Led league in stolen bases and batting average multiple times.",
+    commentOne:
+      "Known for his speed and batting skill during the dead-ball era.",
+    commentTwo:
+      "Led league in stolen bases and batting average multiple times.",
   },
 
   {
@@ -2424,7 +2420,7 @@ export const hofMember = [
     awards: [
       "10× All-Star",
       "6× World Series Champion",
-      "1961 AL Cy Young Award"
+      "1961 AL Cy Young Award",
     ],
     birthDay: "10/21/1928",
     deathDay: "10/8/2020",
@@ -2474,7 +2470,8 @@ export const hofMember = [
     nickNames: "Father of Black Baseball",
     yearInducted: 1981,
     commentOne: "Founder of the Negro National League (1920).",
-    commentTwo: "Dominant pitcher and visionary leader for African American baseball.",
+    commentTwo:
+      "Dominant pitcher and visionary leader for African American baseball.",
   },
 
   {
@@ -2495,7 +2492,8 @@ export const hofMember = [
     nickNames: "Bud",
     yearInducted: 2022,
     commentOne: "First known African American to play professional baseball.",
-    commentTwo: "Paved the way for future integration despite fierce segregation.",
+    commentTwo:
+      "Paved the way for future integration despite fierce segregation.",
   },
 
   {
@@ -2509,11 +2507,7 @@ export const hofMember = [
     yearsActive: "1947–1965",
     batHand: ["Left"],
     throwHand: ["Right"],
-    awards: [
-      "15× All-Star",
-      "1959 AL MVP",
-      "3× Gold Glove"
-    ],
+    awards: ["15× All-Star", "1959 AL MVP", "3× Gold Glove"],
     birthDay: "12/25/1927",
     deathDay: "12/1/1975",
     realName: "Jacob Nelson Fox",
@@ -2534,22 +2528,16 @@ export const hofMember = [
     yearsActive: "1925–1945",
     batHand: ["Right"],
     throwHand: ["Right"],
-    awards: [
-      "9× All-Star",
-      "3× AL MVP",
-      "1933 World Series Champion"
-    ],
+    awards: ["9× All-Star", "3× AL MVP", "1933 World Series Champion"],
     birthDay: "10/22/1907",
     deathDay: "7/21/1967",
     realName: "James Emory Foxx",
     nickNames: ["Double X", "The Beast"],
     yearInducted: 1951,
     commentOne: "One of the game's early power-hitting legends.",
-    commentTwo: "Ended career with 534 home runs, third all-time at retirement.",
+    commentTwo:
+      "Ended career with 534 home runs, third all-time at retirement.",
   },
-
-
-
 
   {
     firstName: "Ford",
@@ -2569,7 +2557,8 @@ export const hofMember = [
     nickNames: null,
     yearInducted: 1970,
     commentOne: "Served as National League President and MLB Commissioner.",
-    commentTwo: "Introduced the controversial 'asterisk' idea during Maris’s 61 HR season.",
+    commentTwo:
+      "Introduced the controversial 'asterisk' idea during Maris’s 61 HR season.",
   },
 
   {
@@ -2583,10 +2572,7 @@ export const hofMember = [
     yearsActive: "1919–1937",
     batHand: ["Switch"],
     throwHand: ["Right"],
-    awards: [
-      "4× World Series Champion",
-      "1931 NL MVP"
-    ],
+    awards: ["4× World Series Champion", "1931 NL MVP"],
     birthDay: "9/9/1898",
     deathDay: "3/12/1973",
     realName: "Frank Francis Frisch",
@@ -2628,17 +2614,14 @@ export const hofMember = [
     yearsActive: "1923–1939",
     batHand: ["Left"],
     throwHand: ["Left"],
-    awards: [
-      "2× AL MVP",
-      "7× All-Star",
-      "6× World Series Champion"
-    ],
+    awards: ["2× AL MVP", "7× All-Star", "6× World Series Champion"],
     birthDay: "6/19/1903",
     deathDay: "6/2/1941",
     realName: "Henry Louis Gehrig",
     nickNames: "The Iron Horse",
     yearInducted: 1939,
-    commentOne: "Held record for consecutive games played (2,130) for 56 years.",
+    commentOne:
+      "Held record for consecutive games played (2,130) for 56 years.",
     commentTwo: "Famous for his 'Luckiest Man' farewell speech.",
   },
 
@@ -2653,11 +2636,7 @@ export const hofMember = [
     yearsActive: "1924–1942",
     batHand: ["Left"],
     throwHand: ["Right"],
-    awards: [
-      "6× All-Star",
-      "1937 AL MVP",
-      "1935 World Series Champion"
-    ],
+    awards: ["6× All-Star", "1937 AL MVP", "1935 World Series Champion"],
     birthDay: "5/11/1903",
     deathDay: "1/21/1993",
     realName: "Charles Leonard Gehringer",
@@ -2682,7 +2661,7 @@ export const hofMember = [
       "9× All-Star",
       "2× Cy Young Award",
       "2× World Series MVP",
-      "9× Gold Glove"
+      "9× Gold Glove",
     ],
     birthDay: "11/9/1935",
     deathDay: "10/2/2020",
@@ -2706,7 +2685,7 @@ export const hofMember = [
     throwHand: ["Right"],
     awards: [
       "2× Negro World Series Champion",
-      "Multiple Negro League batting titles"
+      "Multiple Negro League batting titles",
     ],
     birthDay: "12/21/1911",
     deathDay: "1/20/1947",
@@ -2714,7 +2693,8 @@ export const hofMember = [
     nickNames: "Black Babe Ruth",
     yearInducted: 1972,
     commentOne: "Considered one of the greatest power hitters in history.",
-    commentTwo: "Credited with nearly 800 career home runs in Negro Leagues and other play.",
+    commentTwo:
+      "Credited with nearly 800 career home runs in Negro Leagues and other play.",
   },
 
   {
@@ -2741,7 +2721,12 @@ export const hofMember = [
   {
     firstName: "Pat",
     lastName: "Gillick",
-    teams: ["Toronto Blue Jays", "Baltimore Orioles", "Seattle Mariners", "Philadelphia Phillies"],
+    teams: [
+      "Toronto Blue Jays",
+      "Baltimore Orioles",
+      "Seattle Mariners",
+      "Philadelphia Phillies",
+    ],
     primaryTeam: ["Toronto Blue Jays"],
     position: "Executive / General Manager",
     nationality: "American",
@@ -2774,7 +2759,7 @@ export const hofMember = [
       "2× Cy Young Award",
       "10× All-Star",
       "1995 World Series Champion",
-      "1995 World Series MVP"
+      "1995 World Series MVP",
     ],
     birthDay: "3/25/1966",
     deathDay: null,
@@ -2796,10 +2781,7 @@ export const hofMember = [
     yearsActive: "1930–1943",
     batHand: ["Left"],
     throwHand: ["Left"],
-    awards: [
-      "7× All-Star",
-      "5× World Series Champion"
-    ],
+    awards: ["7× All-Star", "5× World Series Champion"],
     birthDay: "11/26/1908",
     deathDay: "2/17/1989",
     realName: "Vernon Louis Gomez",
@@ -2820,11 +2802,7 @@ export const hofMember = [
     yearsActive: "1938–1950",
     batHand: ["Right"],
     throwHand: ["Right"],
-    awards: [
-      "9× All-Star",
-      "1942 AL MVP",
-      "5× World Series Champion"
-    ],
+    awards: ["9× All-Star", "1942 AL MVP", "5× World Series Champion"],
     birthDay: "2/18/1915",
     deathDay: "4/14/1978",
     realName: "Joseph Lowell Gordon",
@@ -2858,7 +2836,15 @@ export const hofMember = [
   {
     firstName: "Goose",
     lastName: "Gossage",
-    teams: ["Chicago White Sox", "Pittsburgh Pirates", "New York Yankees", "San Diego Padres", "Chicago Cubs", "St. Louis Cardinals", "Seattle Mariners"],
+    teams: [
+      "Chicago White Sox",
+      "Pittsburgh Pirates",
+      "New York Yankees",
+      "San Diego Padres",
+      "Chicago Cubs",
+      "St. Louis Cardinals",
+      "Seattle Mariners",
+    ],
     primaryTeam: ["Chicago White Sox"],
     position: "Relief Pitcher",
     nationality: "American",
@@ -2894,7 +2880,8 @@ export const hofMember = [
     nickNames: null,
     yearInducted: 2006,
     commentOne: "Considered one of the greatest 19th‑century Black players.",
-    commentTwo: "Exceptional hitter and fielder in Negro Leagues and early integrated teams.",
+    commentTwo:
+      "Exceptional hitter and fielder in Negro Leagues and early integrated teams.",
   },
 
   {
@@ -2947,7 +2934,14 @@ export const hofMember = [
   {
     firstName: "Clark",
     lastName: "Griffith",
-    teams: ["St. Louis Browns", "Boston Reds", "Chicago Colts", "Chicago White Stockings", "New York Highlanders", "Washington Senators (Owner/Manager)"],
+    teams: [
+      "St. Louis Browns",
+      "Boston Reds",
+      "Chicago Colts",
+      "Chicago White Stockings",
+      "New York Highlanders",
+      "Washington Senators (Owner/Manager)",
+    ],
     primaryTeam: ["Washington Senators"],
     position: "Pitcher / Manager / Owner",
     nationality: "American",
@@ -2961,14 +2955,23 @@ export const hofMember = [
     realName: "Clark Calvin Griffith",
     nickNames: "The Old Fox",
     yearInducted: 1946,
-    commentOne: "Successful as a player, manager, and long-time owner of the Senators.",
+    commentOne:
+      "Successful as a player, manager, and long-time owner of the Senators.",
     commentTwo: "Key figure in early American League history.",
   },
 
   {
     firstName: "Burleigh",
     lastName: "Grimes",
-    teams: ["Pittsburgh Pirates", "Brooklyn Robins", "New York Giants", "Boston Braves", "St. Louis Cardinals", "Chicago Cubs", "New York Yankees"],
+    teams: [
+      "Pittsburgh Pirates",
+      "Brooklyn Robins",
+      "New York Giants",
+      "Boston Braves",
+      "St. Louis Cardinals",
+      "Chicago Cubs",
+      "New York Yankees",
+    ],
     primaryTeam: ["Brooklyn Robins"],
     position: "Pitcher",
     nationality: "American",
@@ -2982,7 +2985,8 @@ export const hofMember = [
     realName: "Burleigh Arland Grimes",
     nickNames: "Ol' Stubblebeard",
     yearInducted: 1964,
-    commentOne: "Last pitcher legally allowed to throw the spitball after it was banned.",
+    commentOne:
+      "Last pitcher legally allowed to throw the spitball after it was banned.",
     commentTwo: "270 career wins with gritty competitiveness.",
   },
 
@@ -3000,7 +3004,7 @@ export const hofMember = [
     awards: [
       "2× World Series Champion (1929, 1930)",
       "1931 AL MVP",
-      "9× ERA Leader"
+      "9× ERA Leader",
     ],
     birthDay: "3/6/1900",
     deathDay: "5/22/1975",
@@ -3014,7 +3018,12 @@ export const hofMember = [
   {
     firstName: "Vladimir",
     lastName: "Guerrero",
-    teams: ["Montreal Expos", "Los Angeles Angels", "Texas Rangers", "Baltimore Orioles"],
+    teams: [
+      "Montreal Expos",
+      "Los Angeles Angels",
+      "Texas Rangers",
+      "Baltimore Orioles",
+    ],
     primaryTeam: ["Montreal Expos", "Los Angeles Angels"],
     position: "Right Fielder",
     nationality: "Dominican",
@@ -3022,11 +3031,7 @@ export const hofMember = [
     yearsActive: "1996–2011",
     batHand: ["Right"],
     throwHand: ["Right"],
-    awards: [
-      "9× All-Star",
-      "2004 AL MVP",
-      "8× Silver Slugger"
-    ],
+    awards: ["9× All-Star", "2004 AL MVP", "8× Silver Slugger"],
     birthDay: "2/9/1975",
     deathDay: null,
     realName: "Vladimir Alvino Guerrero",
@@ -3051,7 +3056,7 @@ export const hofMember = [
       "15× All-Star",
       "8× NL Batting Champion",
       "5× Gold Glove",
-      "7× Silver Slugger"
+      "7× Silver Slugger",
     ],
     birthDay: "5/9/1960",
     deathDay: "6/16/2014",
@@ -3065,7 +3070,10 @@ export const hofMember = [
   {
     firstName: "Chick",
     lastName: "Hafey",
-    teams: ["St. Louis Cardinals (1924–1931)", "Cincinnati Reds (1932–1935, 1937)"],
+    teams: [
+      "St. Louis Cardinals (1924–1931)",
+      "Cincinnati Reds (1932–1935, 1937)",
+    ],
     primaryTeam: ["St. Louis Cardinals"],
     position: "Left Fielder",
     nationality: "American",
@@ -3079,10 +3087,11 @@ export const hofMember = [
     realName: "Charles James Hafey",
     nickNames: null,
     yearInducted: 1971,
-    commentOne: "First All‑Star Game hit and cleanup hitter in inaugural 1933 game" ,
-    commentTwo: "Known for playing with eyeglasses due to beaning injuries" 
+    commentOne:
+      "First All‑Star Game hit and cleanup hitter in inaugural 1933 game",
+    commentTwo: "Known for playing with eyeglasses due to beaning injuries",
   },
-  
+
   {
     firstName: "Jesse",
     lastName: "Haines",
@@ -3101,13 +3110,16 @@ export const hofMember = [
     nickNames: "Pop",
     yearInducted: 1970,
     commentOne: "210 career wins with a sweeping knuckleball",
-    commentTwo: "Cardinals’ leader in shutouts, pitched into his 40s" 
+    commentTwo: "Cardinals’ leader in shutouts, pitched into his 40s",
   },
 
   {
     firstName: "Roy",
     lastName: "Halladay",
-    teams: ["Toronto Blue Jays (1998–2009)", "Philadelphia Phillies (2010–2013)"],
+    teams: [
+      "Toronto Blue Jays (1998–2009)",
+      "Philadelphia Phillies (2010–2013)",
+    ],
     primaryTeam: ["Toronto Blue Jays", "Philadelphia Phillies"],
     position: "Pitcher",
     nationality: "American",
@@ -3115,20 +3127,30 @@ export const hofMember = [
     yearsActive: "1998–2013",
     batHand: ["Right"],
     throwHand: ["Right"],
-    awards: ["8× All-Star", "2× Cy Young Award", "Perfect Game (2010)", "Postseason no-hitter (2010)"],
+    awards: [
+      "8× All-Star",
+      "2× Cy Young Award",
+      "Perfect Game (2010)",
+      "Postseason no-hitter (2010)",
+    ],
     birthDay: "5/14/1977",
     deathDay: "11/7/2017",
     realName: "Roy Cleveland Halladay III",
     nickNames: "Doc",
     yearInducted: 2019,
-    commentOne: "One of only two pitchers with both a perfect game and postseason no-hitter",
-    commentTwo: "Career 203 wins and 2,954 strikeouts"
+    commentOne:
+      "One of only two pitchers with both a perfect game and postseason no-hitter",
+    commentTwo: "Career 203 wins and 2,954 strikeouts",
   },
 
   {
     firstName: "Billy",
     lastName: "Hamilton",
-    teams: ["Philadelphia Phillies (1888–1891)", "Boston Reds (ALA)", "Chicago Colts"],
+    teams: [
+      "Philadelphia Phillies (1888–1891)",
+      "Boston Reds (ALA)",
+      "Chicago Colts",
+    ],
     primaryTeam: ["Philadelphia Phillies"],
     position: "Center Fielder",
     nationality: "American",
@@ -3143,7 +3165,7 @@ export const hofMember = [
     nickNames: "Sliding Billy",
     yearInducted: 1961,
     commentOne: "Led NL in stolen bases six times",
-    commentTwo: "One of the fastest players of 19th-century baseball"
+    commentTwo: "One of the fastest players of 19th-century baseball",
   },
 
   {
@@ -3164,7 +3186,7 @@ export const hofMember = [
     nickNames: null,
     yearInducted: 1996,
     commentOne: "Pioneer of 'inside baseball' and strategic play",
-    commentTwo: "Led Baltimore to four NL pennants in 1890s"
+    commentTwo: "Led Baltimore to four NL pennants in 1890s",
   },
 
   {
@@ -3185,13 +3207,19 @@ export const hofMember = [
     nickNames: null,
     yearInducted: 1972,
     commentOne: "Served as President of the American League for 27 years.",
-    commentTwo: "Instrumental in modernizing the league during his tenure."
+    commentTwo: "Instrumental in modernizing the league during his tenure.",
   },
 
   {
     firstName: "Bucky",
     lastName: "Harris",
-    teams: ["Washington Senators", "Detroit Tigers", "Boston Red Sox", "Philadelphia Phillies", "New York Yankees"],
+    teams: [
+      "Washington Senators",
+      "Detroit Tigers",
+      "Boston Red Sox",
+      "Philadelphia Phillies",
+      "New York Yankees",
+    ],
     primaryTeam: ["Washington Senators"],
     position: "Second Baseman / Manager",
     nationality: "American",
@@ -3205,8 +3233,9 @@ export const hofMember = [
     realName: "Stanley Raymond Harris",
     nickNames: "The Boy Wonder",
     yearInducted: 1975,
-    commentOne: "At 27, led Senators to first World Series title as player-manager.",
-    commentTwo: "Managed multiple clubs over a 29-year managerial career."
+    commentOne:
+      "At 27, led Senators to first World Series title as player-manager.",
+    commentTwo: "Managed multiple clubs over a 29-year managerial career.",
   },
   {
     firstName: "Gabby",
@@ -3225,8 +3254,9 @@ export const hofMember = [
     realName: "Charles Leo Hartnett",
     nickNames: "Gabby",
     yearInducted: 1955,
-    commentOne: "Known for the 'Homer in the Gloamin’' that clinched the 1938 NL pennant.",
-    commentTwo: "One of the greatest catchers of his era."
+    commentOne:
+      "Known for the 'Homer in the Gloamin’' that clinched the 1938 NL pennant.",
+    commentTwo: "One of the greatest catchers of his era.",
   },
 
   {
@@ -3246,8 +3276,9 @@ export const hofMember = [
     realName: "Harold Douglas Harvey",
     nickNames: "God",
     yearInducted: 2010,
-    commentOne: "Widely regarded as one of the greatest umpires in MLB history.",
-    commentTwo: "Known for fairness, integrity, and command of the game."
+    commentOne:
+      "Widely regarded as one of the greatest umpires in MLB history.",
+    commentTwo: "Known for fairness, integrity, and command of the game.",
   },
 
   {
@@ -3268,7 +3299,7 @@ export const hofMember = [
     nickNames: "Slug",
     yearInducted: 1952,
     commentOne: "One of the premier hitters of the 1920s; career .342 average.",
-    commentTwo: "Beloved Tigers legend and later a popular radio announcer."
+    commentTwo: "Beloved Tigers legend and later a popular radio announcer.",
   },
 
   {
@@ -3288,14 +3319,25 @@ export const hofMember = [
     realName: "Todd Lynn Helton",
     nickNames: null,
     yearInducted: 2024,
-    commentOne: "One of the most consistent hitters of his era with a .316 career average.",
-    commentTwo: "Played entire career with Rockies; beloved Colorado icon."
+    commentOne:
+      "One of the most consistent hitters of his era with a .316 career average.",
+    commentTwo: "Played entire career with Rockies; beloved Colorado icon.",
   },
 
   {
     firstName: "Rickey",
     lastName: "Henderson",
-    teams: ["Oakland Athletics", "New York Yankees", "Toronto Blue Jays", "San Diego Padres", "Anaheim Angels", "Boston Red Sox", "New York Mets", "Seattle Mariners", "Los Angeles Dodgers"],
+    teams: [
+      "Oakland Athletics",
+      "New York Yankees",
+      "Toronto Blue Jays",
+      "San Diego Padres",
+      "Anaheim Angels",
+      "Boston Red Sox",
+      "New York Mets",
+      "Seattle Mariners",
+      "Los Angeles Dodgers",
+    ],
     primaryTeam: ["Oakland Athletics"],
     position: "Left Fielder",
     nationality: "American",
@@ -3309,14 +3351,20 @@ export const hofMember = [
     realName: "Rickey Nelson Henley Henderson",
     nickNames: "Man of Steal",
     yearInducted: 2009,
-    commentOne: "MLB's all-time leader in stolen bases, runs, and leadoff homers.",
-    commentTwo: "Famed for electrifying speed, swagger, and longevity."
+    commentOne:
+      "MLB's all-time leader in stolen bases, runs, and leadoff homers.",
+    commentTwo: "Famed for electrifying speed, swagger, and longevity.",
   },
 
   {
     firstName: "Billy",
     lastName: "Herman",
-    teams: ["Chicago Cubs", "Brooklyn Dodgers", "Boston Braves", "Pittsburgh Pirates"],
+    teams: [
+      "Chicago Cubs",
+      "Brooklyn Dodgers",
+      "Boston Braves",
+      "Pittsburgh Pirates",
+    ],
     primaryTeam: ["Chicago Cubs"],
     position: "Second Baseman",
     nationality: "American",
@@ -3331,13 +3379,18 @@ export const hofMember = [
     nickNames: "Billy",
     yearInducted: 1975,
     commentOne: "One of the best defensive second basemen of his time.",
-    commentTwo: "Known for consistency at bat and leadership on the field."
+    commentTwo: "Known for consistency at bat and leadership on the field.",
   },
 
   {
     firstName: "Whitey",
     lastName: "Herzog",
-    teams: ["Kansas City Royals", "St. Louis Cardinals", "Texas Rangers", "California Angels"],
+    teams: [
+      "Kansas City Royals",
+      "St. Louis Cardinals",
+      "Texas Rangers",
+      "California Angels",
+    ],
     primaryTeam: ["St. Louis Cardinals"],
     position: "Manager",
     nationality: "American",
@@ -3352,10 +3405,10 @@ export const hofMember = [
     nickNames: "Whitey",
     yearInducted: 2010,
     commentOne: "Famed for 'Whiteyball,' a speed and defense-focused strategy.",
-    commentTwo: "Led Cardinals to three NL pennants and a World Series title."
- },
+    commentTwo: "Led Cardinals to three NL pennants and a World Series title.",
+  },
 
- {
+  {
     firstName: "Pete",
     lastName: "Hill",
     teams: ["Philadelphia Giants", "Leland Giants", "Chicago American Giants"],
@@ -3373,7 +3426,7 @@ export const hofMember = [
     nickNames: "Pete",
     yearInducted: 2006,
     commentOne: "One of the greatest Negro League players of the early era.",
-    commentTwo: "Highly respected for both playing skill and leadership."
+    commentTwo: "Highly respected for both playing skill and leadership.",
   },
 
   {
@@ -3387,14 +3440,18 @@ export const hofMember = [
     yearsActive: "1943–1963",
     batHand: ["Right"],
     throwHand: ["Right"],
-    awards: ["8× All-Star", "3× Gold Glove", "1969 World Series Champion (Manager)"],
+    awards: [
+      "8× All-Star",
+      "3× Gold Glove",
+      "1969 World Series Champion (Manager)",
+    ],
     birthDay: "4/4/1924",
     deathDay: "4/2/1972",
     realName: "Gilbert Raymond Hodges",
     nickNames: null,
     yearInducted: 2022,
     commentOne: "Key player for the Boys of Summer Dodgers.",
-    commentTwo: "Managed the 'Miracle Mets' to 1969 title."
+    commentTwo: "Managed the 'Miracle Mets' to 1969 title.",
   },
 
   {
@@ -3415,7 +3472,7 @@ export const hofMember = [
     nickNames: null,
     yearInducted: 2018,
     commentOne: "Second player in MLB history with 600 saves.",
-    commentTwo: "Known for devastating changeup and 'Hells Bells' entrance."
+    commentTwo: "Known for devastating changeup and 'Hells Bells' entrance.",
   },
 
   {
@@ -3436,13 +3493,19 @@ export const hofMember = [
     nickNames: null,
     yearInducted: 1971,
     commentOne: "Outstanding defensive outfielder and base runner.",
-    commentTwo: "Holds Red Sox record for most World Series wins."
+    commentTwo: "Holds Red Sox record for most World Series wins.",
   },
 
   {
     firstName: "Rogers",
     lastName: "Hornsby",
-    teams: ["St. Louis Cardinals", "Chicago Cubs", "Boston Braves", "New York Giants", "St. Louis Browns"],
+    teams: [
+      "St. Louis Cardinals",
+      "Chicago Cubs",
+      "Boston Braves",
+      "New York Giants",
+      "St. Louis Browns",
+    ],
     primaryTeam: ["St. Louis Cardinals"],
     position: "Second Baseman / Manager",
     nationality: "American",
@@ -3456,14 +3519,22 @@ export const hofMember = [
     realName: "Rogers Hornsby Sr.",
     nickNames: "The Rajah",
     yearInducted: 1942,
-    commentOne: "Holds highest career batting average in National League history (.358).",
-    commentTwo: "Led Cardinals to first World Series title in 1926."
+    commentOne:
+      "Holds highest career batting average in National League history (.358).",
+    commentTwo: "Led Cardinals to first World Series title in 1926.",
   },
 
   {
     firstName: "Waite",
     lastName: "Hoyt",
-    teams: ["New York Yankees", "Boston Red Sox", "Detroit Tigers", "Philadelphia Athletics", "Brooklyn Dodgers", "Pittsburgh Pirates"],
+    teams: [
+      "New York Yankees",
+      "Boston Red Sox",
+      "Detroit Tigers",
+      "Philadelphia Athletics",
+      "Brooklyn Dodgers",
+      "Pittsburgh Pirates",
+    ],
     primaryTeam: ["New York Yankees"],
     position: "Pitcher",
     nationality: "American",
@@ -3478,7 +3549,7 @@ export const hofMember = [
     nickNames: "Schoolboy",
     yearInducted: 1969,
     commentOne: "Ace of the Yankees during Ruth-Gehrig era.",
-    commentTwo: "Later became a famous radio broadcaster."
+    commentTwo: "Later became a famous radio broadcaster.",
   },
 
   {
@@ -3498,8 +3569,9 @@ export const hofMember = [
     realName: "Robert Calvin Hubbard",
     nickNames: "Cal",
     yearInducted: 1976,
-    commentOne: "Only person enshrined in both Baseball and Pro Football Hall of Fame.",
-    commentTwo: "Served as an MLB umpire for 16 seasons."
+    commentOne:
+      "Only person enshrined in both Baseball and Pro Football Hall of Fame.",
+    commentTwo: "Served as an MLB umpire for 16 seasons.",
   },
 
   {
@@ -3519,8 +3591,10 @@ export const hofMember = [
     realName: "Carl Owen Hubbell",
     nickNames: "King Carl, The Meal Ticket",
     yearInducted: 1947,
-    commentOne: "Known for his devastating screwball and 5 consecutive All-Star strikeouts (1934).",
-    commentTwo: "Spent entire career with Giants; one of the top lefties in MLB history."
+    commentOne:
+      "Known for his devastating screwball and 5 consecutive All-Star strikeouts (1934).",
+    commentTwo:
+      "Spent entire career with Giants; one of the top lefties in MLB history.",
   },
 
   {
@@ -3540,8 +3614,10 @@ export const hofMember = [
     realName: "Miller James Huggins",
     nickNames: "Mighty Mite",
     yearInducted: 1964,
-    commentOne: "Legendary Yankees manager who led the team through its first dynasty.",
-    commentTwo: "Known for strategic brilliance despite small physical stature."
+    commentOne:
+      "Legendary Yankees manager who led the team through its first dynasty.",
+    commentTwo:
+      "Known for strategic brilliance despite small physical stature.",
   },
 
   {
@@ -3562,7 +3638,8 @@ export const hofMember = [
     nickNames: null,
     yearInducted: 1995,
     commentOne: "Founder of the National League in 1876.",
-    commentTwo: "Pioneer in professionalizing and legitimizing organized baseball."
+    commentTwo:
+      "Pioneer in professionalizing and legitimizing organized baseball.",
   },
 
   {
@@ -3576,14 +3653,19 @@ export const hofMember = [
     yearsActive: "1965–1979",
     batHand: ["Right"],
     throwHand: ["Right"],
-    awards: ["5× World Series Champion", "1974 AL Cy Young Award", "8× All-Star"],
+    awards: [
+      "5× World Series Champion",
+      "1974 AL Cy Young Award",
+      "8× All-Star",
+    ],
     birthDay: "4/8/1946",
     deathDay: "9/9/1999",
     realName: "James Augustus Hunter",
     nickNames: "Catfish",
     yearInducted: 1987,
-    commentOne: "Pioneering free agent and key to multiple A's and Yankees championships.",
-    commentTwo: "Famed for his control and consistency in the clutch."
+    commentOne:
+      "Pioneering free agent and key to multiple A's and Yankees championships.",
+    commentTwo: "Famed for his control and consistency in the clutch.",
   },
 
   {
@@ -3597,21 +3679,21 @@ export const hofMember = [
     yearsActive: "1938–1956 (including Negro Leagues)",
     batHand: ["Right"],
     throwHand: ["Right"],
-    awards: ["Negro League World Series Champion", "MLB All-Star (1952)", "World Series Champion (1954)"],
+    awards: [
+      "Negro League World Series Champion",
+      "MLB All-Star (1952)",
+      "World Series Champion (1954)",
+    ],
     birthDay: "2/25/1919",
     deathDay: "1/11/2016",
     realName: "Monford Merrill Irvin",
     nickNames: "Monte",
     yearInducted: 1973,
-    commentOne: "Bridged Negro Leagues to MLB; one of first African American MLB stars.",
-    commentTwo: "Respected for talent, leadership, and grace in breaking barriers."
+    commentOne:
+      "Bridged Negro Leagues to MLB; one of first African American MLB stars.",
+    commentTwo:
+      "Respected for talent, leadership, and grace in breaking barriers.",
   },
-
-
-
-
-
-
 
   {
     firstName: "Ted",
