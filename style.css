@@ -2,8 +2,16 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 2rem;
-  background-color: #f5f5f5;
+  background-color: #347bd7;
   color: #333;
+}
+
+h1 { 
+  font-size: 3rem;
+  font-family: "Zen Tokyo Zoo", system-ui;
+  color: white;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 main {

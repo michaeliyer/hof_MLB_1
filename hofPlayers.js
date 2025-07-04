@@ -180,32 +180,6 @@ export const hofMember = [
 },
 
 {
-  firstName: "Luis",
-  lastName: "Aparicio",
-  teams: ["Chicago White Sox", "Baltimore Orioles", "Boston Red Sox"],
-  primaryTeam: ["Chicago White Sox"],
-  position: "Shortstop",
-  nationality: "Venezuelan",
-  race: "Latino",
-  yearsActive: "1956–1973",
-  batHand: ["Right"],
-  throwHand: ["Right"],
-  awards: [
-    "10× All-Star",
-    "9× Gold Glove",
-    "1956 AL Rookie of the Year",
-    "AL Stolen Base Leader 9×"
-  ],
-  birthDay: "4/29/1934",
-  deathDay: null,
-  realName: "Luis Ernesto Aparicio Montiel",
-  nickNames: "Little Louie",
-  yearInducted: 1984,
-  commentOne: "Revolutionized the shortstop position with speed and defense.",
-  commentTwo: "First Venezuelan player inducted into the Baseball Hall of Fame.",
-},
-
-{
   firstName: "Luke",
   lastName: "Appling",
   teams: ["Chicago White Sox"],
