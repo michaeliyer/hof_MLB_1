@@ -28,6 +28,7 @@ class HofSearch extends LitElement {
     teamTerm: { type: String },
     positionTerm: { type: String },
     nationalityTerm: { type: String },
+    raceTerm: { type: String },
     awardTerm: { type: String },
     suffixTerm: { type: String },
     showAll: { type: Boolean },
@@ -37,9 +38,10 @@ class HofSearch extends LitElement {
     super();
     this.firstNameTerm = "";
     this.lastNameTerm = "";
-    this.teamTerm = "All Teams";
-    this.positionTerm = "All Positions";
-    this.nationalityTerm = "";
+    this.teamTerm = "Select Team";
+    this.positionTerm = "Select Position";
+    this.nationalityTerm = "Select Nationality";
+    this.raceTerm = "Select Race";
     this.awardTerm = "";
     this.suffixTerm = "";
     this.showAll = false;
@@ -51,7 +53,7 @@ class HofSearch extends LitElement {
       (player.teams || []).forEach((team) => teams.add(team));
       (player.primaryTeam || []).forEach((team) => teams.add(team));
     });
-    return ["All Teams", ...Array.from(teams).sort()];
+    return ["Select Team", ...Array.from(teams).sort()];
   }
 
   get allPositions() {
@@ -65,7 +67,24 @@ class HofSearch extends LitElement {
       }
     });
     positions.add("DH"); // Ensure DH is present
-    return ["All Positions", ...Array.from(positions).sort()];
+    return ["Select Position", ...Array.from(positions).sort()];
+  }
+
+  get allNationalities() {
+    const nationalities = new Set();
+    hofMember.forEach((player) => {
+      if (player.nationality && player.nationality.trim())
+        nationalities.add(player.nationality);
+    });
+    return ["Select Nationality", ...Array.from(nationalities).sort()];
+  }
+
+  get allRaces() {
+    const races = new Set();
+    hofMember.forEach((player) => {
+      if (player.race && player.race.trim()) races.add(player.race);
+    });
+    return ["Select Race", ...Array.from(races).sort()];
   }
 
   updateField(e, field) {
@@ -76,9 +95,10 @@ class HofSearch extends LitElement {
   clearSearch() {
     this.firstNameTerm = "";
     this.lastNameTerm = "";
-    this.teamTerm = "All Teams";
-    this.positionTerm = "All Positions";
-    this.nationalityTerm = "";
+    this.teamTerm = "Select Team";
+    this.positionTerm = "Select Position";
+    this.nationalityTerm = "Select Nationality";
+    this.raceTerm = "Select Race";
     this.awardTerm = "";
     this.suffixTerm = "";
     this.showAll = false;
@@ -92,9 +112,10 @@ class HofSearch extends LitElement {
     const hasSearch =
       this.firstNameTerm ||
       this.lastNameTerm ||
-      (this.teamTerm && this.teamTerm !== "All Teams") ||
-      (this.positionTerm && this.positionTerm !== "All Positions") ||
-      this.nationalityTerm ||
+      (this.teamTerm && this.teamTerm !== "Select Team") ||
+      (this.positionTerm && this.positionTerm !== "Select Position") ||
+      (this.nationalityTerm && this.nationalityTerm !== "Select Nationality") ||
+      (this.raceTerm && this.raceTerm !== "Select Race") ||
       this.awardTerm ||
       this.suffixTerm;
     if (!hasSearch && !this.showAll) return [];
@@ -111,20 +132,20 @@ class HofSearch extends LitElement {
             player.lastName
               .toLowerCase()
               .startsWith(this.lastNameTerm.toLowerCase()))) &&
-        (this.teamTerm === "All Teams" ||
+        (this.teamTerm === "Select Team" ||
           (player.teams && player.teams.includes(this.teamTerm)) ||
           (player.primaryTeam && player.primaryTeam.includes(this.teamTerm))) &&
-        (this.positionTerm === "All Positions" ||
+        (this.positionTerm === "Select Position" ||
           (player.position &&
             player.position
               .split("/")
               .map((p) => p.trim())
               .includes(this.positionTerm))) &&
-        (!this.nationalityTerm ||
+        (this.nationalityTerm === "Select Nationality" ||
           (player.nationality &&
-            player.nationality
-              .toLowerCase()
-              .includes(this.nationalityTerm.toLowerCase()))) &&
+            player.nationality === this.nationalityTerm)) &&
+        (this.raceTerm === "Select Race" ||
+          (player.race && player.race === this.raceTerm)) &&
         (!this.awardTerm ||
           (player.awards &&
             player.awards.some((award) =>
@@ -182,12 +203,22 @@ class HofSearch extends LitElement {
             (pos) => html`<option value="${pos}">${pos}</option>`
           )}
         </select>
-        <input
-          type="text"
-          placeholder="Search by nationality..."
-          @input=${(e) => this.updateField(e, "nationalityTerm")}
+        <select
+          @change=${(e) => this.updateField(e, "nationalityTerm")}
           .value=${this.nationalityTerm}
-        />
+        >
+          ${this.allNationalities.map(
+            (nat) => html`<option value="${nat}">${nat}</option>`
+          )}
+        </select>
+        <select
+          @change=${(e) => this.updateField(e, "raceTerm")}
+          .value=${this.raceTerm}
+        >
+          ${this.allRaces.map(
+            (race) => html`<option value="${race}">${race}</option>`
+          )}
+        </select>
         <input
           type="text"
           placeholder="Search by award..."
@@ -201,9 +232,11 @@ class HofSearch extends LitElement {
         (this.firstNameTerm ||
           this.lastNameTerm ||
           this.suffixTerm ||
-          (this.teamTerm && this.teamTerm !== "All Teams") ||
-          (this.positionTerm && this.positionTerm !== "All Positions") ||
-          this.nationalityTerm ||
+          (this.teamTerm && this.teamTerm !== "Select Team") ||
+          (this.positionTerm && this.positionTerm !== "Select Position") ||
+          (this.nationalityTerm &&
+            this.nationalityTerm !== "Select Nationality") ||
+          (this.raceTerm && this.raceTerm !== "Select Race") ||
           this.awardTerm)
           ? html`<p><em>No players found. Try adjusting your search.</em></p>`
           : sortedPlayers.map(
@@ -218,6 +251,7 @@ class HofSearch extends LitElement {
                   <p><strong>Teams:</strong> ${player.teams.join(", ")}</p>
                   <p><strong>Position:</strong> ${player.position}</p>
                   <p><strong>Nationality:</strong> ${player.nationality}</p>
+                  <p><strong>Race:</strong> ${player.race}</p>
                   <p><strong>Years Active:</strong> ${player.yearsActive}</p>
                   <p><strong>Bats:</strong> ${player.batHand.join(", ")}</p>
                   <p><strong>Throws:</strong> ${player.throwHand.join(", ")}</p>
