@@ -6,7 +6,7 @@ body {
   color: #333;
 }
 
-h1 { 
+h1 {
   font-size: 3rem;
   font-family: "Zen Tokyo Zoo", system-ui;
   color: white;
@@ -14,10 +14,6 @@ h1 {
   margin-bottom: 1rem;
 }
 
-main {
-  max-width: 1000px;
-  margin: auto;
-}
 
 input[type="text"] {
   padding: 0.5rem;
@@ -47,12 +43,30 @@ button:hover {
   border: 1px solid #ddd;
   padding: 1rem;
   margin-bottom: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .player-card h3 {
   margin-top: 0;
   color: #222;
+}
+
+
+.player-columns {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping onto new lines */
+  justify-content: flex-start; /* Align to the left or use center if you prefer */
+  gap: 1rem;
+  width: 100%;
+}
+.player-column {
+  flex: 1 1 16%; /* Adjust this value for more or fewer columns */
+
+  min-width: 140px;
+  max-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 @media (max-width: 600px) {
@@ -64,3 +78,4 @@ button:hover {
     width: 100%;
   }
 }
+

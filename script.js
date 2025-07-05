@@ -15,6 +15,7 @@ class HofSearch extends LitElement {
       margin-bottom: 1rem;
       border-radius: 8px;
       background-color: dodgerblue;
+      max-width: 25%;
     }
     button {
       margin: 1rem;
@@ -328,6 +329,25 @@ class HofSearch extends LitElement {
     return counts;
   }
 
+  // Helper to split array into up to 6 columns, as evenly as possible, max 60 per column
+  splitIntoColumns(players) {
+    const total = players.length;
+    if (total === 0) return [];
+    const maxCols = 8;
+    const maxPerCol = 40;
+    let numCols = Math.min(maxCols, Math.ceil(total / maxPerCol));
+    const baseSize = Math.floor(total / numCols);
+    const extra = total % numCols;
+    const columns = [];
+    let start = 0;
+    for (let i = 0; i < numCols; i++) {
+      const size = baseSize + (i < extra ? 1 : 0);
+      columns.push(players.slice(start, start + size));
+      start += size;
+    }
+    return columns;
+  }
+
   render() {
     const sortedPlayers = this.filteredPlayers.sort((a, b) =>
       a.lastName.localeCompare(b.lastName)
@@ -470,21 +490,36 @@ class HofSearch extends LitElement {
           ? html`<p style="font-weight:bold; margin-top:1em;">${leadIn}</p>`
           : ""}
 
-        <div>
-          ${sortedPlayers.length === 0 &&
-          (this.firstNameTerm ||
-            this.lastNameTerm ||
-            this.suffixTerm ||
-            (this.teamTerm && this.teamTerm !== "Select Team") ||
-            (this.positionTerm && this.positionTerm !== "Select Position") ||
-            (this.nationalityTerm &&
-              this.nationalityTerm !== "Select Nationality") ||
-            (this.raceTerm && this.raceTerm !== "Select Race") ||
-            this.awardTerm)
-            ? html`<p><em>No players found. Try adjusting your search.</em></p>`
-            : html`
-                <ul style="list-style:none; padding:0;">
-                  ${sortedPlayers.map(
+        <div
+          class="player-columns"
+          style="display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin:2rem 0 2.5rem 0;"
+        >
+          ${(() => {
+            const columns = this.splitIntoColumns(sortedPlayers);
+            if (
+              columns.length === 0 &&
+              (this.firstNameTerm ||
+                this.lastNameTerm ||
+                this.suffixTerm ||
+                (this.teamTerm && this.teamTerm !== "Select Team") ||
+                (this.positionTerm &&
+                  this.positionTerm !== "Select Position") ||
+                (this.nationalityTerm &&
+                  this.nationalityTerm !== "Select Nationality") ||
+                (this.raceTerm && this.raceTerm !== "Select Race") ||
+                this.awardTerm)
+            ) {
+              return html`<p>
+                <em>No players found. Try adjusting your search.</em>
+              </p>`;
+            }
+            return columns.map(
+              (col) => html`
+                <ul
+                  class="player-column"
+                  style="list-style:none;padding:0;margin:0 1.5rem;min-width:180px;max-width:220px;display:flex;flex-direction:column;align-items:flex-start;"
+                >
+                  ${col.map(
                     (player) => html`
                       <li style="margin-bottom:0.5em;">
                         <a
@@ -501,7 +536,9 @@ class HofSearch extends LitElement {
                     `
                   )}
                 </ul>
-              `}
+              `
+            );
+          })()}
         </div>
 
         <div>
