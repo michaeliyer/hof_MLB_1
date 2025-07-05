@@ -346,8 +346,8 @@ class HofSearch extends LitElement {
   splitIntoColumns(players) {
     const total = players.length;
     if (total === 0) return [];
-    const maxCols = 8;
-    const maxPerCol = 40;
+    const maxCols = 7;
+    const maxPerCol = 50;
     let numCols = Math.min(maxCols, Math.ceil(total / maxPerCol));
     const baseSize = Math.floor(total / numCols);
     const extra = total % numCols;
