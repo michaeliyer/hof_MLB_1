@@ -62,8 +62,12 @@ class HofSearch extends LitElement {
   get allTeams() {
     const teams = new Set();
     hofMember.forEach((player) => {
-      (player.teams || []).forEach((team) => teams.add(team));
-      (player.primaryTeam || []).forEach((team) => teams.add(team));
+      (player.teams || []).forEach((team) => {
+        if (!team.match(/\(.*\)/)) teams.add(team.trim());
+      });
+      (player.primaryTeam || []).forEach((team) => {
+        if (!team.match(/\(.*\)/)) teams.add(team.trim());
+      });
     });
     return ["Select Team", ...Array.from(teams).sort()];
   }
