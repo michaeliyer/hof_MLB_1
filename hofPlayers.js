@@ -4332,9 +4332,9 @@ export const hofMember = [
     birthDay: "9/22/1927",
     deathDay: "1/7/2021",
     realName: "Thomas Charles Lasorda",
-    nickNames: "Hated by Fletch",
+    nickNames: null,
     yearInducted: 1997,
-    commentOne: "Managed Dodgers to four NL pennants.",
+    commentOne: ["Managed Dodgers to four NL pennants.", " Hated by Fletch!"],
     commentTwo: "Beloved ambassador of the game with fiery passion."
   },
 

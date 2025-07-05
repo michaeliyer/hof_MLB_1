@@ -14,9 +14,9 @@ class HofSearch extends LitElement {
       padding: 1rem;
       margin-bottom: 1rem;
       border-radius: 8px;
-      background-color: #9d9c9c;
+      background-color:rgb(0, 0, 0);
       box-sizing: border-box;
-      color: #fff;
+      color: white;
     }
     .open-player-cards-grid {
       display: grid;
