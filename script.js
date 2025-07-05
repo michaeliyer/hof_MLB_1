@@ -559,7 +559,7 @@ class HofSearch extends LitElement {
             (player) => html`
               <div class="player-card">
                 <button
-                  style="float:right; font-size:1.2em; background:none; border:none; cursor:pointer; color:#fff; font-weight:bold;"
+                  style="float:right; font-size: 2.5em; background:none; border:none; cursor:pointer; color:#fff; font-weight:bold;"
                   @click=${() => this.closePlayer(player)}
                 >
                   ×
