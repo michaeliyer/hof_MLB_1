@@ -15,7 +15,16 @@ class HofSearch extends LitElement {
       margin-bottom: 1rem;
       border-radius: 8px;
       background-color: dodgerblue;
-      max-width: 25%;
+      box-sizing: border-box;
+      color: #fff;
+    }
+    .open-player-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      justify-items: center;
+      margin: 2rem auto;
+      max-width: 1200px;
     }
     button {
       margin: 1rem;
@@ -541,7 +550,7 @@ class HofSearch extends LitElement {
           })()}
         </div>
 
-        <div>
+        <div class="open-player-cards-grid">
           ${this.openPlayers.map(
             (player) => html`
               <div class="player-card">
