@@ -14,7 +14,7 @@ class HofSearch extends LitElement {
       padding: 1rem;
       margin-bottom: 1rem;
       border-radius: 8px;
-      background-color: dodgerblue;
+      background-color: black;
       box-sizing: border-box;
       color: #fff;
     }
