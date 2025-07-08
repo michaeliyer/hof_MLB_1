@@ -3347,7 +3347,7 @@ export const hofMember = [
     throwHand: ["Left"],
     awards: ["10× All-Star", "2× World Series Champion", "AL MVP (1990)"],
     birthDay: "12/25/1958",
-    deathDay: null,
+    deathDay: "December 20, 2024",
     realName: "Rickey Nelson Henley Henderson",
     nickNames: "Man of Steal",
     yearInducted: 2009,
